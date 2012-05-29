@@ -195,12 +195,13 @@ class AE(threading.Thread):
     trigger callback functions that perform user defined actions based
     on received events.
     """
-    def __init__(self, AET, port, SOPSCU, SOPSCP, 
+    def __init__(self, AET, SOPSCU, SOPSCP, 
                  SupportedTransferSyntax=[
                                           ExplicitVRLittleEndian, 
                                           ImplicitVRLittleEndian, 
                                           ExplicitVRBigEndian
-                                          ], 
+                                          ],
+                 port = None,
                  MaxPDULength=16000):
         self.LocalAE = {'Address': platform.node(), 'Port': port, 'AET':AET}
         self.SupportedSOPClassesAsSCU = SOPSCU
@@ -210,12 +211,15 @@ class AE(threading.Thread):
         threading.Thread.__init__(self, name=self.LocalAE['AET'])
 
         self.SOPUID = [x for x in self.SupportedSOPClassesAsSCP]
-        self.LocalServerSocket = socket.socket(socket.AF_INET, \
-                                               socket.SOCK_STREAM)
-        self.LocalServerSocket.setsockopt(socket.SOL_SOCKET, \
-                                          socket.SO_REUSEADDR,1)
-        self.LocalServerSocket.bind(('', port))     
-        self.LocalServerSocket.listen(1)
+        if port != None:
+            self.LocalServerSocket = socket.socket(socket.AF_INET, \
+                                                   socket.SOCK_STREAM)
+            self.LocalServerSocket.setsockopt(socket.SOL_SOCKET, \
+                                              socket.SO_REUSEADDR,1)
+            self.LocalServerSocket.bind(('', port))     
+            self.LocalServerSocket.listen(1)
+        else:
+            self.LocalServerSocket = None
         self.MaxPDULength = MaxPDULength
 
         # build presentation context definition list to be sent to remote AE when
@@ -275,7 +279,10 @@ class AE(threading.Thread):
 
     def Quit(self):
 	for aa in self.Associations:
-	    aa.Kill()	    
+	    aa.Kill()
+        if self.LocalServerSocket != None:
+            self.LocalServerSocket.close()
+
 	self.__Quit = True
        
 	

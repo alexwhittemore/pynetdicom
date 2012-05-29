@@ -197,13 +197,13 @@ class QueryRetrieveFindSOPClass(QueryRetrieveServiceClass):
     Pending = Status(
         'Pending',
         'Matches are continuing - Current Match is supplied \
-        and any Optional Keys were supported in the same manner as Required Keys',
+and any Optional Keys were supported in the same manner as Required Keys',
         xrange(0xFF00,0xFF00+1)
         )
     PendingWarning = Status(
         'Pending',
-        'Matches are continuing - Warning that one or more Optional\
-        Keys were not supported for existence and/or matching for this identifier',
+        'Matches are continuing - Warning that one or more Optional \
+Keys were not supported for existence and/or matching for this identifier',
         xrange(0xFF01,0xFF01+1)
         )
 
@@ -228,10 +228,10 @@ class QueryRetrieveFindSOPClass(QueryRetrieveServiceClass):
             if not ans: continue
             d = dsutils.decode(ans.Identifier, self.transfersyntax.is_implicit_VR, self.transfersyntax.is_little_endian)
             try:
-                status = self.Code2Status(ans.Status.value).Type
+                status = self.Code2Status(ans.Status.value)
             except:
                 status = None
-            if status <> 'Pending':
+            if status != None and status.Type <> 'Pending':
                 break
             yield status, d
         yield status, d
@@ -427,6 +427,7 @@ class QueryRetrieveMoveSOPClass(QueryRetrieveServiceClass):
             if not ans: continue
             status = self.Code2Status(ans.Status.value).Type
             if status <> 'Pending':
+                yield status
                 break
             yield status
 
@@ -507,6 +508,9 @@ class MRImageStorageSOPClass(StorageSOPClass):
 
 class CTImageStorageSOPClass(StorageSOPClass):
     UID = '1.2.840.10008.5.1.4.1.1.2'
+
+class PositronEmissionTomographyImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.128'
 
 class CRImageStorageSOPClass(StorageSOPClass):
     UID = '1.2.840.10008.5.1.4.1.1.1'

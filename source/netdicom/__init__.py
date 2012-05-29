@@ -11,6 +11,7 @@ from SOPclass import \
     StorageSOPClass,\
     MRImageStorageSOPClass,\
     CTImageStorageSOPClass,\
+    PositronEmissionTomographyImageStorageSOPClass,\
     CRImageStorageSOPClass,\
     SCImageStorageSOPClass,\
     RTImageStorageSOPClass,\
