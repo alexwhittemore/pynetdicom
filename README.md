@@ -16,4 +16,5 @@ Cloned from mercurial to git:
     git checkout HEAD
 or something like that. Must use fresh git repo. [more info](http://hivelogic.com/articles/converting-from-mercurial-to-git)
 
+I suspect that future upstream hg commits will need to be merged using something like <http://hg-git.github.com/>. Figuring that out is a project for later.
 
