@@ -500,6 +500,7 @@ class VerificationSOPClass(VerificationServiceClass):
 
 
 # STORAGE SOP CLASSES
+# Slowly adding everything from http://www.dicomlibrary.com/dicom/sop/
 class StorageSOPClass(StorageServiceClass):
     pass
 
@@ -577,6 +578,18 @@ class UltrasoundMultiframeImageStorageSOPClass(StorageSOPClass):
 
 class SCImageStorageSOPClass(StorageSOPClass):
     UID = '1.2.840.10008.5.1.4.1.1.7'
+
+class MultiframeSingleBitSecondaryCaptureImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.7.1'
+
+class MultiframeGrayscaleByteSecondaryCaptureImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.7.2'
+
+class MultiframeGrayscaleWordSecondaryCaptureImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.7.3'
+
+class MultiframeTrueColorSecondaryCaptureImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.7.4'
 
 class RTImageStorageSOPClass(StorageSOPClass):
     UID = '1.2.840.10008.5.1.4.1.1.481.1'
