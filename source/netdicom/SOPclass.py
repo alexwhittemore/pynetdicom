@@ -506,6 +506,12 @@ class StorageSOPClass(StorageServiceClass):
 class MRImageStorageSOPClass(StorageSOPClass):
     UID = '1.2.840.10008.5.1.4.1.1.4'
 
+class EnhancedMRImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.4.1'
+
+class MRSpectroscopyStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.4.2'
+
 class CTImageStorageSOPClass(StorageSOPClass):
     UID = '1.2.840.10008.5.1.4.1.1.2'
 
@@ -514,6 +520,60 @@ class PositronEmissionTomographyImageStorageSOPClass(StorageSOPClass):
 
 class CRImageStorageSOPClass(StorageSOPClass):
     UID = '1.2.840.10008.5.1.4.1.1.1'
+
+class DigitalXRayImagePresentationStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.1.1'
+
+class DigitalXRayImageProcessingStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.1.1.1'
+
+class DigitalMammographyXRayImagePresentationStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.1.2'
+
+class DigitalMammographyXRayImageProcessingStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.1.2.1'
+
+class DigitalIntraOralXRayImagePresentationStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.1.3'
+
+class DigitalIntraOralXRayImageProcessingStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.1.3.1'
+
+class EncapsulatedPDFStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.104.1'
+    
+class GrayscaleSoftcopyPresentationStateStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.11.1'
+    
+class ColorSoftcopyPresentationStateStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.11.2'
+
+class PseudocolorSoftcopyPresentationStageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.11.3'
+
+class BlendingSoftcopyPresentationStateStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.11.4'
+
+class XRayAngiographicImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.12.1'
+
+class EnhancedXAImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.12.1.1'
+
+class XRayRadiofluoroscopicImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.12.2'
+
+class EnhancedXRFImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.12.2.1'
+
+class EnhancedCTImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.2.1'
+
+class NMImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.20'
+
+class UltrasoundMultiframeImageStorageSOPClass(StorageSOPClass):
+    UID = '1.2.840.10008.5.1.4.1.1.3.1'
 
 class SCImageStorageSOPClass(StorageSOPClass):
     UID = '1.2.840.10008.5.1.4.1.1.7'
