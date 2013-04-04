@@ -19,6 +19,7 @@ or something like that. Must use fresh git repo. [more info](http://hivelogic.co
 I suspect that future upstream hg commits will need to be merged using something like <http://hg-git.github.com/>. Figuring that out is a project for later.
 
 ## Change list
+Current working version: 0.8.1
 
 * Added (numerous) StorageSOPClasses (IDs found at <http://www.dicomlibrary.com/dicom/sop/>)
 * Fixed a bug in applicationentity.py in the Association class which prevented PyDev from working properly (would crash on breakpoint)
