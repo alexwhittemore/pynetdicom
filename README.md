@@ -1,4 +1,4 @@
-# pynetdicom
+# pynetdicom:
 
 Pure Python DICOM network library
 
