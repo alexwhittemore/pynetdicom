@@ -5,7 +5,7 @@
 .\#*
 
 # Temporary files used by the vim editor.
-.*.swp
+*.swp
 .*.orig
 
 # A hidden file created by the Mac OS X Finder.
