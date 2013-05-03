@@ -137,7 +137,7 @@ class StorageServiceClass(ServiceClass):
 
     def SCP(self, msg):
         status = None
-        print self.transfersyntax.is_implicit_VR
+        #print self.transfersyntax.is_implicit_VR
         try:
             DS = dsutils.decode(msg.DataSet, 
                                 self.transfersyntax.is_implicit_VR, 
@@ -158,7 +158,7 @@ class StorageServiceClass(ServiceClass):
                 print "There was an exception in OnReceiveStore callback"
                 status = self.CannotUnderstand
         rsp.Status = int(status)
-        print "Status: %s" % status
+        #print "Status: %s" % status
         # send response
         self.DIMSE.Send(rsp, self.pcid, self.ACSE.MaxPDULength)
         
