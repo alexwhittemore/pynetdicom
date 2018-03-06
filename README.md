@@ -1,5 +1,7 @@
 ## pynetdicom
 
+*This repo is long since disused. A modern fork is under active development at https://github.com/pydicom/pynetdicom3*
+
 Pure Python DICOM network library
 
 Cloned from rickardholmberg's modifications at <https://code.google.com/r/rickardholmberg-pynetdicom/>
